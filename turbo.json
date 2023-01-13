@@ -12,7 +12,10 @@
       "cache": false
     },
     "test": {
-      "outputs": []
+        "outputs": []
+    },
+    "test:ci": {
+      "outputs": ["coverage/**"]
     }
   }
 }
