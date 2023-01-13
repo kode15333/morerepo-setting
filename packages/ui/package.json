@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --silent --ci --coverage --testLocationInResults --json --outputFile=\\\"report.json\\\""
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
