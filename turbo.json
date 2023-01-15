@@ -24,6 +24,11 @@
       "outputs": [
         "coverage/**"
       ]
+    },
+    "test:badges": {
+      "outputs": [
+        "coverage/badge.svg"
+      ]
     }
   }
 }
