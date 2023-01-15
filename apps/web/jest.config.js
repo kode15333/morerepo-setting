@@ -5,4 +5,5 @@ const createJestConfig = nextJest({
     dir: './',
 })
 
+console.log(commonConfig)
 module.exports = createJestConfig(commonConfig)
