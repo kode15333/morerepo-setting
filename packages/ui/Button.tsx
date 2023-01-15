@@ -1,4 +1,10 @@
 import * as React from "react";
+
 export const Button = () => {
-  return <button>Boop</button>;
+    const a = 1;
+    return (<div style={{
+        color: 'red'
+    }}>
+        <button>Boop</button>
+    </div>);
 };
