@@ -8,5 +8,6 @@ module.exports = {
     },
     moduleNameMapper: {
         "^~/(.*)$": "<rootDir>/",
-    }
+    },
+    coverageReporters: ['json-summary', 'text', 'lcov'],
 }

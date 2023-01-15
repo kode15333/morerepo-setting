@@ -7,7 +7,9 @@
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "test": "jest",
-    "test:ci": "jest --silent --ci --coverage --testLocationInResults --json --outputFile=\\\"report.json\\\""
+    "test:ci": "jest --silent --ci --coverage --testLocationInResults --json --outputFile=\\\"report.json\\\"",
+    "test:coverage": "npm test -- --coverage",
+    "test:badges": "npm run test:coverage  && jest-coverage-badges"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",

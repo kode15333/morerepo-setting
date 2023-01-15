@@ -7,7 +7,7 @@ const commonConfig = {
     },
     testEnvironment: 'jest-environment-jsdom',
     modulePaths: ['<rootDir>/src'],
-    coverageReporters: [ 'text', 'lcov'],
+    coverageReporters: ['json-summary', 'text', 'lcov'],
 }
 
 module.exports = commonConfig
