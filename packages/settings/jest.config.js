@@ -9,7 +9,6 @@ const commonConfig = {
     modulePaths: ['<rootDir>/src'],
     coverageReporters: ['text', 'lcov'],
     coverageDirectory: '<rootDir>/coverage',
-    reporters: ['default', 'lcov'],
 }
 
 module.exports = commonConfig
