@@ -17,7 +17,7 @@
       "cache": false
     },
     "test": {
-      "outputs": [],
+      "outputs": ["coverage/**"],
       "cache": false
     },
     "test:ci": {

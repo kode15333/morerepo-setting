@@ -11,9 +11,7 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test": "turbo run test",
-    "test:ci": "turbo run test:ci",
-    "test:badges": "turbo run test:badges"
+    "test": "turbo run test -- "
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
