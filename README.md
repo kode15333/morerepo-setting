@@ -1,3 +1,8 @@
+### package manager
+- yarn berry
+- node-linker: node-modules
+- pnp 지원을 100% 지원하지 않아서 node-modules로 설정(package에서 전역에 설치된 module을 찾지 못하는 문제 발생)
+
 ### TURBO REPO TEST 환경 설정
 - Library: emotion, axios
 - Test Library:  jest, jest-environment-jsdom, ts-jest, @testing-library, msw
