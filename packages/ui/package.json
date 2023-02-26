@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "test": "jest"
+    "test": "jest --ci --json --coverage --testLocationInResults --outputFile=report.json"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",

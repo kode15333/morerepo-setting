@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest -ci --json --coverage --testLocationInResults --outputFile=report.json"
+    "test": "jest --ci --json --coverage --testLocationInResults --outputFile=report.json"
   },
   "dependencies": {
     "eslint-config-custom": "*",
