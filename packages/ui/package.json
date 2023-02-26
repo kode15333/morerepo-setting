@@ -6,10 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "test": "jest",
-    "test:ci": "jest --silent --ci --coverage --testLocationInResults --json --outputFile=\\\"report.json\\\"",
-    "test:coverage": "npm test -- --coverage",
-    "test:badges": "npm run test:coverage  && jest-coverage-badges"
+    "test": "jest --coverage --reporters=default --reporters=jest-junit"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",

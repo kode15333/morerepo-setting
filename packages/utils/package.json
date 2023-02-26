@@ -2,9 +2,6 @@
   "name": "utils",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest",
-    "test:ci": "jest --silent --ci --coverage --testLocationInResults --json --outputFile=\\\"report.json\\\"",
-    "test:coverage": "npm test -- --coverage",
-    "test:badges": "npm run test:coverage  && jest-coverage-badges"
+    "test": "jest --coverage --reporters=default --reporters=jest-junit"
   }
 }
