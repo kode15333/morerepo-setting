@@ -17,10 +17,7 @@
       "cache": false
     },
     "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": ["build"],
-      "inputs": ["__test__/**/*.ts", "__test__/**/*.tsx"],
-      "outputMode": "full"
+      "outputs": ["coverage/**"]
     },
     "test:ci": {
       "outputs": [
