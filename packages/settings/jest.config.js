@@ -7,8 +7,10 @@ const commonConfig = {
   },
   testEnvironment: "jest-environment-jsdom",
   modulePaths: ["<rootDir>/src"],
-  coverageReporters: ["text", "lcov"],
-  coverageDirectory: "<rootDir>/coverage",
+  coverageReporters: ["clover", "json", "lcov", ["text", { skipFull: true }]],
+  collectCoverageFrom: ["**/*.{js,jsx,ts,tsx}"],
+  coverageDirectory: "../../coverage",
+  coverageOutput: "../../coverage",
 };
 
 module.exports = commonConfig;
