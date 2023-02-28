@@ -5593,7 +5593,6 @@ eslint-config-turbo@latest:
     jest-coverage-badges: ^1.1.2
     jest-environment-jsdom: ^29.4.3
     jest-junit: ^15.0.0
-    lcov-result-merger: ^4.0.0
     msw: ^0.49.2
     prettier: latest
     ts-jest: ^29.0.5
