@@ -1,19 +1,18 @@
 import ClassNames from "@/components/ClassNames";
-import {fireEvent, render, waitFor} from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 
-describe('<ClassNames/>', () => {
-    it("should render", async () => {
-        const {getByText} = render(<ClassNames/>);
-        const button = getByText("Click Me");
+describe("<ClassNames/>", () => {
+  it("should render", async () => {
+    const { getByText } = render(<ClassNames />);
+    const button = getByText("Click Me");
 
-        const target = getByText("Change Color");
+    const target = getByText("Change Color");
 
-        expect(target).not.toHaveClass("isActive");
+    expect(target).not.toHaveClass("isActive");
 
-        fireEvent.click(button);
+    fireEvent.click(button);
 
-        expect(target).toHaveClass("isActive")
-        expect(target).toHaveStyle("color: red;")
-    })
-
+    expect(target).toHaveClass("isActive");
+    expect(target).toHaveStyle("color: red;");
+  });
 });
