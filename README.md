@@ -1,3 +1,5 @@
+[![DOCS_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml)
+[![WEB_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml)
 ### package manager
 - yarn berry
 - node-linker: node-modules
