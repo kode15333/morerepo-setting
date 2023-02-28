@@ -1,10 +1,10 @@
 import { Button } from "ui";
-import Hello from "../src/components/Hello";
+import EmotionStyle from "@/components/EmotionStyle";
 export default function Web() {
   return (
     <div>
       <h1>Web</h1>
-        <Hello/>
+      <EmotionStyle />
       <Button />
     </div>
   );
