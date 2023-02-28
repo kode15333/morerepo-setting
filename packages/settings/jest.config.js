@@ -4,6 +4,7 @@ const commonConfig = {
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
     "^@/components/(.*)$": "<rootDir>/src/components/$1",
     "^@/utils/(.*)$": "<rootDir>/src/utils/$1",
+    "^@/hooks/(.*)$": "<rootDir>/src/hooks/$1",
   },
   testEnvironment: "jest-environment-jsdom",
   modulePaths: ["<rootDir>/src"],

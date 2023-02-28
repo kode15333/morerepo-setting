@@ -22,7 +22,7 @@
     "jest-coverage-badges": "^1.1.2",
     "jest-environment-jsdom": "^29.4.3",
     "jest-junit": "^15.0.0",
-    "msw": "^0.49.2",
+    "msw": "^1.1.0",
     "prettier": "latest",
     "ts-jest": "^29.0.5",
     "turbo": "latest"
@@ -34,6 +34,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "axios": "^1.3.4",
+    "classnames": "^2.3.2",
     "dotenv": "^16.0.3"
   },
   "packageManager": "yarn@3.4.1"

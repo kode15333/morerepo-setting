@@ -2410,6 +2410,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -5549,13 +5556,14 @@ eslint-config-turbo@latest:
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.4.3
     axios: ^1.3.4
+    classnames: ^2.3.2
     dotenv: ^16.0.3
     eslint-config-custom: "*"
     jest: ^29.4.3
     jest-coverage-badges: ^1.1.2
     jest-environment-jsdom: ^29.4.3
     jest-junit: ^15.0.0
-    msw: ^0.49.2
+    msw: ^1.1.0
     prettier: latest
     ts-jest: ^29.0.5
     turbo: latest
@@ -5583,9 +5591,9 @@ eslint-config-turbo@latest:
   languageName: node
   linkType: hard
 
-"msw@npm:^0.49.2":
-  version: 0.49.3
-  resolution: "msw@npm:0.49.3"
+"msw@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "msw@npm:1.1.0"
   dependencies:
     "@mswjs/cookies": ^0.2.2
     "@mswjs/interceptors": ^0.17.5
@@ -5613,7 +5621,7 @@ eslint-config-turbo@latest:
       optional: true
   bin:
     msw: cli/index.js
-  checksum: 8322cd42cd69f289c05517d02bde22fc2f10e86fc2d0d209d9df54bd03d10b8123723c5587a2654dcd2cd0f314a016f9eccac88cffa30fafd1f9fead16db639e
+  checksum: e555547defbc3f07532bdadcbf9f4e3a32b92156d3869e85c9038ecaac220cfc93901727da097b7f9d3ecf9cbbc5a9178c0ecdd3999a9201db4c85c99b92c361
   languageName: node
   linkType: hard
 
