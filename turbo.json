@@ -17,17 +17,8 @@
       "cache": false
     },
     "test": {
-      "outputs": ["coverage/**"]
-    },
-    "test:ci": {
-      "outputs": [
-        "coverage/**"
-      ]
-    },
-    "test:badges": {
-      "outputs": [
-        "coverage/badge.svg"
-      ]
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
     }
   }
 }
