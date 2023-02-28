@@ -31,3 +31,6 @@
 
     mswServerForTest()
   ```
+### CI(coverage report)
+- push/pull-request event 발생시, CI(test/build) 후 coverage report
+  
