@@ -32,6 +32,7 @@ jobs:
     - name: jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2
       with:
+        skip-step: install
         package-manager: yarn
         working-directory: ./apps/web
         coverage-file: report.json

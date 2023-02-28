@@ -1,13 +1,13 @@
 {
   "name": "docs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --ci --json --coverage --testLocationInResults --outputFile=report.json"
+    "test": "jest --silent --ci --coverage --testLocationInResults --json --outputFile='report.json'"
   },
   "dependencies": {
     "eslint-config-custom": "*",
