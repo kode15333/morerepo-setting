@@ -1,13 +1,9 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Home from "../pages";
+import { render } from "@testing-library/react";
 
-describe("MSW Test", function () {
-  it("should render", async function () {
-    render(<Home />);
-    const button = screen.getByRole("button");
-    expect(screen.findByText("False")).toBeTruthy();
-    fireEvent.click(button);
-
-    await waitFor(() => expect(screen.findByText("True")).toBeTruthy());
+describe("<Home/>", () => {
+  it("render", () => {
+    const { getByText } = render(<Home />);
+    expect(getByText("Home")).toBeInTheDocument();
   });
 });
