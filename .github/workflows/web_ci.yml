@@ -33,6 +33,6 @@ jobs:
       uses: ArtiomTr/jest-coverage-report-action@v2
       with:
         package-manager: yarn
-        working-directory: ./apps/docs
+        working-directory: ./apps/web
         coverage-file: report.json
         base-coverage-file: report.json
