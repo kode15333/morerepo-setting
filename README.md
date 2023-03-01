@@ -1,5 +1,6 @@
 [![DOCS_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml)
 [![WEB_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml)
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=kode15333_morerepo-setting)
 ### package manager
 - yarn berry
 - node-linker: node-modules
