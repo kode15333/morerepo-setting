@@ -32,7 +32,7 @@
     mswServerForTest()
   ```
 ### CI(coverage report)
-- push/pull-request event 발생시, CI(test/build) 후 coverage report
+- pull-request event 발생시, CI(test/build) 후 coverage report
   
 ### Renovate
 - 의존성 관리 자동 업데이트
