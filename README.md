@@ -34,3 +34,31 @@
 ### CI(coverage report)
 - push/pull-request event 발생시, CI(test/build) 후 coverage report
   
+### Renovate
+- 의존성 관리 자동 업데이트
+- 사용법
+  1. https://github.com/apps/renovate 원하는 레포
+  2. renovate configuate pr 
+  3. merge 후 renovate 시작
+  4. 설정파일([링크](https://docs.renovatebot.com/configuration-options))
+- 설정파일(renovate.json)  
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    ":timezone(Asia/Seoul)",
+    "config:base"
+  ],
+    "packageRules": [
+      {
+        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true
+      },
+      {
+        "matchDepTypes": ["devDependencies"],
+        "automerge": true
+      }
+    ]
+}
+
+```
