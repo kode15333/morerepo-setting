@@ -4,14 +4,30 @@
     ":timezone(Asia/Seoul)",
     "config:base"
   ],
-    "packageRules": [
-      {
-        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-        "automerge": true
-      },
-      {
-        "matchDepTypes": ["devDependencies"],
-        "automerge": true
+  "packageRules": [
+    {
+      "packagePatterns": ["^@types/"],
+      "automerge": true,
+      "automergeType": "pr-comment",
+      "automergeComment": "This PR has been automatically merged by Renovate Bot because it only modifies package.json files.",
+      "major": {
+        "automerge": false
       }
-    ]
+    },
+    {
+      "groupName": "Linters",
+      "packageNames": ["eslint", "prettier", "stylelint"],
+      "packagePatterns": ["^eslint-", "^prettier-"]
+    },
+    {
+      "groupName": "React",
+      "packageNames": ["react", "react-dom"],
+      "packagePatterns": ["^react-", "^@types/react-", "react-dom-", "^@types/react-dom-"]
+    },
+    {
+      "groupName": "Testing",
+      "packageNames": ["jest", "react-testing-library", "ts-jest"],
+      "packagePatterns": ["^jest-", "^ts-jest-", "^@testing-library/", "^@types/jest-"]
+    }
+  ]
 }
