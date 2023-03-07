@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":timezone(Asia/Seoul)",
     "config:base"
   ],
   "packageRules": [
@@ -13,21 +12,6 @@
       "major": {
         "automerge": false
       }
-    },
-    {
-      "groupName": "Linters",
-      "packageNames": ["eslint", "prettier", "stylelint"],
-      "packagePatterns": ["^eslint-", "^prettier-"]
-    },
-    {
-      "groupName": "React",
-      "packageNames": ["react", "react-dom"],
-      "packagePatterns": ["^react-", "^@types/react-", "react-dom-", "^@types/react-dom-"]
-    },
-    {
-      "groupName": "Testing",
-      "packageNames": ["jest", "react-testing-library", "ts-jest"],
-      "packagePatterns": ["^jest-", "^ts-jest-", "^@testing-library/", "^@types/jest-"]
     }
   ]
 }
