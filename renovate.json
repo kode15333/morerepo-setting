@@ -3,15 +3,13 @@
   "extends": [
     "config:base"
   ],
-  "packageRules": [
-    {
-      "packagePatterns": ["^@types/"],
-      "automerge": true,
-      "automergeType": "pr-comment",
-      "automergeComment": "This PR has been automatically merged by Renovate Bot because it only modifies package.json files.",
-      "major": {
+  "npm": {
+    "enabled": true,
+    "automerge": true,
+    "automergeType": "pr-comment",
+    "automergeComment": "This PR has been automatically merged by Renovate Bot because it only modifies package.json files.",
+    "major": {
         "automerge": false
-      }
     }
-  ]
+  }
 }
