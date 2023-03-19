@@ -50,16 +50,15 @@
     ":timezone(Asia/Seoul)",
     "config:base"
   ],
-    "packageRules": [
-      {
-        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-        "automerge": true
-      },
-      {
-        "matchDepTypes": ["devDependencies"],
-        "automerge": true
-      }
-    ]
+  "npm": {
+    "enabled": true,
+    "automerge": true,
+    "automergeType": "pr-comment",
+    "automergeComment": "This PR has been automatically merged by Renovate Bot because it only modifies package.json files.",
+    "major": {
+      "automerge": false
+    }
+  }
 }
 
 ```
@@ -68,11 +67,4 @@
 - 사용법
   1. https://sonarcloud.io/ 원하는 레포
   2. https://sonarcloud.io/project/analysis_method 에서 예제 코드를 참고하여 sonar-project.properties 파일 생성
-- 설정파일(sonar-project.properties)
-```properties
-sonar.projectKey=kode15333_morerepo-setting
-sonar.organization=kode15333
-sonar.sources=.
-sonar.host.url=https://sonarcloud.io
-sonar.login=********
-```
+  3. 해당 프로젝트로 접근하여 코드 품질 확인
