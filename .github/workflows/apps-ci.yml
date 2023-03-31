@@ -4,8 +4,6 @@ on:
   push:
 
 
-env:
-  APP: 'docs'
 
 jobs:
   check-path:
@@ -21,13 +19,17 @@ jobs:
             web:
               - 'apps/web/**'
       - if: steps.filter.outputs.docs == 'true'
-        run: echo "APP=docs" >> $GITHUB_ENV
+        id: service
+        run: echo "::set-output name=app::docs"
 
       - if: steps.filter.outputs.web == 'true'
-        run: echo "APP=web" >> $GITHUB_ENV
+        id: service
+        run: echo "::set-output name=app::web"
+
 
   call-workflow-2-in-local-repo:
+    if: ${{ jobs.check-path.steps.filter.outputs.docs != '' }}
     uses: ./.github/workflows/next-ci.yml
     with:
-      app: ${{ env.APP }}
+      app: ${{ jobs.check-path.steps.service.outputs.app }}
 
