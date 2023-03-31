@@ -12,7 +12,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    working-directory: ./apps/${{ inputs.app }}
     steps:
     - name: Use Node.js
       uses: actions/setup-node@v3
@@ -24,7 +23,12 @@ jobs:
       run: yarn install
 
     - name: yarn test
+      working-directory: ./apps/${{ inputs.app }}
       run: yarn test
+
+    - name: build
+      working-directory: ./apps/${{ inputs.app }}
+      run: yarn build
 
     - name: jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2
