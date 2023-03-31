@@ -5,12 +5,10 @@ on:
 
 jobs:
   call-workflow-2-in-local-repo:
-    steps:
-      uses: ./.github/workflows/next-ci.yml
-      with:
-        app: 'web'
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: 'web'
   call-workflow-2-in-remote-repo:
-    steps:
-      uses: ./.github/workflows/next-ci.yml
-      with:
-        app: 'docs'
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: 'docs'
