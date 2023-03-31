@@ -13,27 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - uses: dorny/paths-filter@v2
-      id: filter
-      with:
-        filters: |
-          web:
-            - 'apps/web/**'
-          docs:
-            - 'apps/docs/**'
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            web:
+              - 'apps/web/**'
+            docs:
+              - 'apps/docs/**'
 
-    - if: steps.filter.outputs.web == 'true'
-      name: Set APP to web
-      run: echo "APP=web" >> $GITHUB_ENV
+      - if: steps.filter.outputs.web == 'true'
+        name: Set APP to web
+        run: echo "APP=web" >> $GITHUB_ENV
 
-    - if: steps.filter.outputs.docs == 'true'
-      name: Set APP to docs
-      run: echo "APP=docs" >> $GITHUB_ENV
+      - if: steps.filter.outputs.docs == 'true'
+        name: Set APP to docs
+        run: echo "APP=docs" >> $GITHUB_ENV
 
-    - name: call next CI workflow
-      uses: ./.github/workflows/next-ci.yml
-      with:
-        app: ${{ env.APP }}
+      - name: call next CI workflow
+        uses: ./.github/workflows/next-ci.yml
+        with:
+          app: ${{ env.APP }}
 
 
