@@ -10,6 +10,7 @@ env:
   APP: 'web'
 jobs:
   test:
+    runs-on: ubuntu-latest
     steps:
 
 
