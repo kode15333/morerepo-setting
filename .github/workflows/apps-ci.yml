@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/**/**
+
+jobs:
+  Web-CI:
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: web
+  Docs-CI:
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: docs
