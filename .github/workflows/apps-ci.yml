@@ -9,8 +9,6 @@ env:
 jobs:
   path:
     runs-on: ubuntu-latest
-    env:
-      SERVICE : ''
     steps:
       - uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
@@ -21,18 +19,19 @@ jobs:
               - 'apps/docs/**'
             web:
               - 'apps/web/**'
+
       - if: steps.filter.outputs.docs == 'true'
         run: echo "SERVICE=docs >> $GITHUB_ENV"
 
       - if: steps.filter.outputs.web == 'true'
         run: echo "SERVICE=web >> $GITHUB_ENV"
 
-    call-workflow-1-in-local-repo:
-      run: echo ${{env.SERVICE}}
 
-#  call-workflow-2-in-local-repo:
-#    if: ${{env.SERVICE}} != ''
-#    uses: ./.github/workflows/next-ci.yml
-#    with:
-#      app: jobs.path.env.SERVICE
+
+
+  call-workflow-2-in-local-repo:
+    if: env.SERVICE != ''
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: ${{ env.SERVICE }}
 
