@@ -7,14 +7,12 @@ on:
         required: true
         type: string
 
-defaults:
-  run:
-    shell: bash
-    working-directory: ./apps/${{ inputs.app }}
+
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    working-directory: ./apps/${{ inputs.app }}
     steps:
     - name: Use Node.js
       uses: actions/setup-node@v3
