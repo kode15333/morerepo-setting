@@ -7,9 +7,7 @@ on:
       username:
         required: true
         type: string
-    secrets:
-      SECRET_SEED:
-        default: "1234567890"
+
 
 jobs:
   reusable_workflow_job:
@@ -17,5 +15,4 @@ jobs:
     steps:
       - run: |
           echo ${{ inputs.username }}
-          echo ${{ secrets.SECRET_SEED }}
-          echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
+          echo sed 's/./& /g' 
