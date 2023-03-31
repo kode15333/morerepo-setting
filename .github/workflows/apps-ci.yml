@@ -7,8 +7,8 @@ jobs:
   call-workflow-2-in-local-repo:
     uses: ./.github/workflows/next-ci.yml
     with:
-      app: 'web'
+      app: web
   call-workflow-2-in-remote-repo:
     uses: ./.github/workflows/next-ci.yml
     with:
-      app: 'docs'
+      app: docs
