@@ -23,17 +23,17 @@ jobs:
       run: yarn install
 
     - name: yarn test
-      working-directory: ./apps/${{ inputs.app }}
+      working-directory: apps/${{ inputs.app }}
       run: yarn test
 
     - name: build
-      working-directory: ./apps/${{ inputs.app }}
+      working-directory: apps/${{ inputs.app }}
       run: yarn build
 
     - name: jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2
       with:
         package-manager: yarn
-        working-directory: ./apps/{{ inputs.app }}
+        working-directory: apps/{{ inputs.app }}
         coverage-file: report.json
         base-coverage-file: report.json
