@@ -10,12 +10,12 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: Use Node.js
       uses: actions/setup-node@v3
 
