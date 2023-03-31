@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-workflow-2-in-local-repo:
-    uses: ./.github/workflows/called.yaml
+    uses: .github/workflows/called.yaml
     with:
       username: mona
     secrets:
