@@ -1,11 +1,14 @@
 const Test = () => {
-    return (
-        <div css={{
-            color: 'red',
-        }}>
-            Hello World
-        </div>
-    );
+  console.log("call");
+  return (
+    <div
+      css={{
+        color: "red",
+      }}
+    >
+      Hello World
+    </div>
+  );
 };
 
 export default Test;
