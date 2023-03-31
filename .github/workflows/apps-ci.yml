@@ -10,15 +10,13 @@ env:
   APP: 'web'
 jobs:
   test:
-    runs-on: ubuntu-latest
-
     steps:
 
 
       - name: call next CI workflow
         uses: ./.github/workflows/next-ci.yml
         with:
-          app: ${{ env.APP }}
+          app: 'web'
 
 
 
