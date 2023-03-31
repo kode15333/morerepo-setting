@@ -34,5 +34,5 @@ jobs:
     - name: jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2
       with:
-        working-directory: apps/{{ inputs.app }}
+        working-directory: apps/${{ inputs.app }}
         coverage-file: report.json
