@@ -6,10 +6,10 @@ on:
 
 jobs:
   call-workflow-2-in-local-repo:
-    uses: ./.github/ci/next-ci.yml
+    uses: ./.github/workflow/ci/next-ci.yml
     with:
       app: web
-  call-workflow-2-in-remote-repo:
-    uses: ./.github/ci/next-ci.yml
+  call-workflow3-in-remote-repo:
+    uses: ./.github/workflow/ci/next-ci.yml
     with:
       app: docs
