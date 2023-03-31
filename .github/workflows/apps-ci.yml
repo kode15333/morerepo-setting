@@ -1,43 +1,14 @@
-name: Caller Workflow
+name: CI
 
 on:
   push:
 
-env:
-  SERVICE: ''
-
 jobs:
-  path:
-    runs-on: ubuntu-latest
-    env:
-      FOO: ''
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: |
-            docs:
-              - 'apps/docs/**'
-            web:
-              - 'apps/web/**'
-
-      - if: steps.filter.outputs.docs == 'true'
-        run: echo "SERVICE=docs >> $GITHUB_ENV"
-
-      - if: steps.filter.outputs.web == 'true'
-        run: echo "SERVICE=web >> $GITHUB_ENV"
-
-
-
-
-  call-workflow-2-in-local-repo:
-    if: env.SERVICE != ''
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Call workflow 2
-        run: ${{ env.SERVICE }}
-      - name: Call path job env
-        run: echo jobs.path.env.FOO
-
+  Web-CI:
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: web
+  Docs-CI:
+    uses: ./.github/workflows/next-ci.yml
+    with:
+      app: docs
