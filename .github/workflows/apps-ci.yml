@@ -34,6 +34,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Call workflow 2
-        with:
-          app: ${{ env.SERVICE }}
+        run: ${{ env.SERVICE }}
 
