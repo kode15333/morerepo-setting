@@ -34,8 +34,9 @@ jobs:
         run: echo "APP=docs" >> $GITHUB_ENV
 
       - name: call next CI workflow
-        uses: kode15333/morerepo-setting/.github/workflows/next-ci.yml
+        uses: ./.github/workflows/next-ci.yml
         with:
           app: ${{ env.APP }}
+        secrets: inherit
 
 
