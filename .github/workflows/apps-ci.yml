@@ -31,6 +31,7 @@ jobs:
 
   call-workflow-2-in-local-repo:
     if: env.SERVICE != ''
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Call workflow 2
