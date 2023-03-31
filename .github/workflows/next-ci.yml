@@ -1,20 +1,21 @@
-name: WEB_CI
+name: NEXT_CI
 on:
-  pull_request:
-    branches: ["main"]
-    paths:
-      - "apps/web/**"
-      - ".github/workflows/web_ci.yml"
+  workflow_call:
+    inputs:
+      app:
+        description: 'Service Name'
+        required: true
+        type: string
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./apps/${{ inputs.app }}
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
     - name: Use Node.js
       uses: actions/setup-node@v3
 
@@ -30,8 +31,7 @@ jobs:
     - name: jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2
       with:
-        skip-step: install
         package-manager: yarn
-        working-directory: ./apps/web
+        working-directory: ./apps/{{ inputs.app }}
         coverage-file: report.json
         base-coverage-file: report.json
