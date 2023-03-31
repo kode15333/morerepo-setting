@@ -8,6 +8,8 @@ on:
 jobs:
   path:
     runs-on: ubuntu-latest
+    env:
+      SERVICE : ''
     steps:
       - uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
@@ -19,17 +21,15 @@ jobs:
             web:
               - 'apps/web/**'
       - if: steps.filter.outputs.docs == 'true'
-        id: service
-        run: echo "::set-output name=app::docs"
+        run: echo "SERVICE=docs >> $GITHUB_ENV"
 
       - if: steps.filter.outputs.web == 'true'
-        id: service
-        run: echo "::set-output name=app::web"
+        run: echo "SERVICE=web >> $GITHUB_ENV"
 
 
   call-workflow-2-in-local-repo:
-    if: jobs.path.steps.filter.outputs.docs != ''
+    if: jobs.path.env.SERVICE != ''
     uses: ./.github/workflows/next-ci.yml
     with:
-      app: jobs.path.steps.service.outputs.app
+      app: jobs.path.env.SERVICE
 
