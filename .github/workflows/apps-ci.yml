@@ -7,9 +7,10 @@ jobs:
   call-workflow-2-in-local-repo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Call Workflow 2 in Local Repo
         uses: ./.github/workflows/called.yaml
         with:
+          branch_name: ${{ env.NAME }}
           username: mona
