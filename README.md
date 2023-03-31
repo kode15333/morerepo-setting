@@ -72,5 +72,5 @@
 ### Github Actions
 - CI
 - 사용법
-  1. 공통모듈 변경시, 모든 서비스가 변경되어야 하기 때문에 monorepo로 관리
-  2. workflow_call을 이용하여 workflow를 재사용
+  1. 공통모듈 변경시, 모든 서비스가 변경되므로  workflow_call을 이용하여 workflow를 재사용
+  2. dorny/paths-filter를 이용하여 환경변수 처리하며 변경된 파일이 있는 경우에만 workflow 실행
