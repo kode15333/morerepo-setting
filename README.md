@@ -1,5 +1,6 @@
-[![DOCS_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml)
-[![WEB_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml)
+[![CI](https://github.com/kode15333/morerepo-setting/actions/workflows/apps-ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/apps-ci.yml)
+[![Reusable Workflow](https://github.com/kode15333/morerepo-setting/actions/workflows/called.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/called.yml)
+[![FRONT CI](https://github.com/kode15333/morerepo-setting/actions/workflows/front-ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/front-ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kode15333_morerepo-setting&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kode15333_morerepo-setting)
 ### package manager
 - yarn berry
