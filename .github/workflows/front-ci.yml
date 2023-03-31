@@ -1,0 +1,56 @@
+name: FRONT CI
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/**/**
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  SERVICE: ''
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          web:
+            - 'apps/web/**'
+          docs:
+            - 'apps/docs/**'
+
+    - if: steps.filter.outputs.web == 'true'
+      run: echo "SERVICE=web" >> $GITHUB_ENV
+
+    - if: steps.filter.outputs.docs == 'true'
+      run: echo "SERVICE=docs" >> $GITHUB_ENV
+
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+
+    - name: install yarn
+      run: npm install -g yarn
+
+    - name : yarn install
+      run: yarn install
+
+    - name: yarn test
+      run: yarn turbo --filter=${{ env.SERVICE }} test
+
+    - name: build
+      run: yarn turbo --filter=${{ env.SERVICE }} build
+
+    - name: jest coverage report
+      uses: ArtiomTr/jest-coverage-report-action@v2
+      with:
+        working-directory: apps/${{ env.SERVICE }}
+        coverage-file: report.json

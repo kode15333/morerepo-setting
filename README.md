@@ -68,3 +68,9 @@
   1. https://sonarcloud.io/ 원하는 레포
   2. https://sonarcloud.io/project/analysis_method 에서 예제 코드를 참고하여 sonar-project.properties 파일 생성
   3. 해당 프로젝트로 접근하여 코드 품질 확인
+
+### Github Actions
+- CI
+- 사용법
+  1. 공통모듈 변경시, 모든 서비스가 변경되어야 하기 때문에 monorepo로 관리
+  2. workflow_call을 이용하여 workflow를 재사용
