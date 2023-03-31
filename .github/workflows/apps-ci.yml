@@ -7,7 +7,7 @@ on:
       - "apps/**/**"
 
 env:
-  APP: ''
+  APP: 'web'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -33,10 +33,11 @@ jobs:
         name: Set APP to docs
         run: echo "APP=docs" >> $GITHUB_ENV
 
+
       - name: call next CI workflow
         uses: ./.github/workflows/next-ci.yml
         with:
           app: ${{ env.APP }}
-        secrets: inherit
+
 
 
