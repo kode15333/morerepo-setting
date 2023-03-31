@@ -5,7 +5,7 @@ on:
 
 
 env:
-  APP: ''
+  APP: 'docs'
 
 jobs:
   check-path:
