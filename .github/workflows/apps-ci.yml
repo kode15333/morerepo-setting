@@ -10,7 +10,7 @@ jobs:
   path:
     runs-on: ubuntu-latest
     env:
-      SERVICE: ''
+      FOO: ''
     steps:
       - uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
@@ -39,5 +39,5 @@ jobs:
       - name: Call workflow 2
         run: ${{ env.SERVICE }}
       - name: Call path job env
-        run: echo ${{ env.SERVICE }}
+        run: echo jobs.path.env.FOO
 
