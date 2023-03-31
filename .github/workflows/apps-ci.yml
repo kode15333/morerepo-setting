@@ -3,7 +3,8 @@ name: Caller Workflow
 on:
   push:
 
-
+env:
+  SERVICE: ''
 
 jobs:
   path:
@@ -26,10 +27,12 @@ jobs:
       - if: steps.filter.outputs.web == 'true'
         run: echo "SERVICE=web >> $GITHUB_ENV"
 
+    call-workflow-1-in-local-repo:
+      run: echo ${{env.SERVICE}}
 
-  call-workflow-2-in-local-repo:
-    if: jobs.path.env.SERVICE != ''
-    uses: ./.github/workflows/next-ci.yml
-    with:
-      app: jobs.path.env.SERVICE
+#  call-workflow-2-in-local-repo:
+#    if: ${{env.SERVICE}} != ''
+#    uses: ./.github/workflows/next-ci.yml
+#    with:
+#      app: jobs.path.env.SERVICE
 
