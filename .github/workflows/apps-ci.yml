@@ -4,12 +4,30 @@ on:
   push:
 
 
+env:
+  APP: ''
+
 jobs:
+  check-path:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            docs:
+              - 'apps/docs/**'
+            web:
+              - 'apps/web/**'
+      - if: steps.filter.outputs.docs == 'true'
+        run: echo "APP=docs" >> $GITHUB_ENV
+
+      - if: steps.filter.outputs.web == 'true'
+        run: echo "APP=web" >> $GITHUB_ENV
+
   call-workflow-2-in-local-repo:
     uses: ./.github/workflows/next-ci.yml
     with:
-      app: web
-  call-workflow3-in-remote-repo:
-    uses: ./.github/workflows/next-ci.yml
-    with:
-      app: docs
+      app: ${{ env.APP }}
+
