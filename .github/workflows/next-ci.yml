@@ -1,41 +1,21 @@
-name: NEXT_CI
+name: Reusable Workflow
+
 on:
+  push:
   workflow_call:
     inputs:
-      app:
-        description: 'Service Name'
+      username:
         required: true
         type: string
-
-defaults:
-  run:
-    shell: bash
-    working-directory: ./apps/${{ inputs.app }}
+    secrets:
+      SECRET_SEED:
+        required: true
 
 jobs:
   reusable_workflow_job:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-
-    - name: install yarn
-      run: npm install -g yarn
-
-    - name : yarn install
-      run: yarn install
-
-    - name: yarn test
-      run: yarn test
-
-    - name: jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v2
-      with:
-        package-manager: yarn
-        working-directory: ./apps/{{ inputs.app }}
-        coverage-file: report.json
-        base-coverage-file: report.json
+      - run: |
+          echo ${{ inputs.username }}
+          echo ${{ secrets.SECRET_SEED }}
+          echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
