@@ -5,9 +5,10 @@ on:
 
 jobs:
   call-workflow-2-in-local-repo:
-    name: Call Workflow 2 in Local Repo
-    uses: .github/workflows/called.yaml
-    with:
-      username: mona
-    secrets:
-      SECRET_SEED: seed
+    steps:
+      name: Call Workflow 2 in Local Repo
+      uses: ./.github/workflows/called.yaml
+      with:
+        username: mona
+      secrets:
+        SECRET_SEED: seed
