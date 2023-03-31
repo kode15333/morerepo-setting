@@ -1,5 +1,6 @@
-[![DOCS_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/docs_ci.yml)
-[![WEB_CI](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/web_ci.yml)
+[![CI](https://github.com/kode15333/morerepo-setting/actions/workflows/apps-ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/apps-ci.yml)
+[![Reusable Workflow](https://github.com/kode15333/morerepo-setting/actions/workflows/called.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/called.yml)
+[![FRONT CI](https://github.com/kode15333/morerepo-setting/actions/workflows/front-ci.yml/badge.svg)](https://github.com/kode15333/morerepo-setting/actions/workflows/front-ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kode15333_morerepo-setting&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kode15333_morerepo-setting)
 ### package manager
 - yarn berry
@@ -68,3 +69,9 @@
   1. https://sonarcloud.io/ 원하는 레포
   2. https://sonarcloud.io/project/analysis_method 에서 예제 코드를 참고하여 sonar-project.properties 파일 생성
   3. 해당 프로젝트로 접근하여 코드 품질 확인
+
+### Github Actions
+- CI
+- 사용법
+  1. 공통모듈 변경시, 모든 서비스가 변경되므로  workflow_call을 이용하여 workflow를 재사용
+  2. dorny/paths-filter를 이용하여 환경변수 처리하며 변경된 파일이 있는 경우에만 workflow 실행
