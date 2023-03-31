@@ -1,5 +1,4 @@
 const Test = () => {
-  console.log("call");
   return (
     <div
       css={{
