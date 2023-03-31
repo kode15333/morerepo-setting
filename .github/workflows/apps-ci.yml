@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  check-path:
+  path:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,8 +28,8 @@ jobs:
 
 
   call-workflow-2-in-local-repo:
-    if: ${{ jobs.check-path.steps.filter.outputs.docs != '' }}
+    if: jobs.path.steps.filter.outputs.docs != ''
     uses: ./.github/workflows/next-ci.yml
     with:
-      app: ${{ jobs.check-path.steps.service.outputs.app }}
+      app: jobs.path.steps.service.outputs.app
 
