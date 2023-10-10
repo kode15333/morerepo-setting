@@ -1684,43 +1684,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.0":
-  version: 18.0.10
-  resolution: "@types/react-dom@npm:18.0.10"
+"@types/react-dom@npm:^18.0.0, @types/react-dom@npm:^18.0.11":
+  version: 18.2.13
+  resolution: "@types/react-dom@npm:18.2.13"
   dependencies:
     "@types/react": "*"
-  checksum: ff8282d5005a0b1cd95fb65bf79d3d8485e4cfe2aaf052129033a178684b940014a3f4536bc20d573f8a01cf4c6f4770c74988cef7c2b5cac3041d9f172647e3
+  checksum: 22ba066b141dca5a5a9227fae0afc7c94b470fff8e8a38ade72649da57a8ea04d0cb2ba3e22005e7d8e772d49bddd28855b1dd98e6defd033bba6afb6edff883
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.11":
-  version: 18.0.11
-  resolution: "@types/react-dom@npm:18.0.11"
-  dependencies:
-    "@types/react": "*"
-  checksum: 579691e4d5ec09688087568037c35edf8cfb1ab3e07f6c60029280733ee7b5c06d66df6fcc90786702c93ac8cb13bc7ff16c79ddfc75d082938fbaa36e1cdbf4
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:*":
-  version: 18.0.26
-  resolution: "@types/react@npm:18.0.26"
+"@types/react@npm:*, @types/react@npm:^18.0.28":
+  version: 18.2.28
+  resolution: "@types/react@npm:18.2.28"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: b62f0ea3cdfa68e106391728325057ad36f1bde7ba2dfae029472c47e01e482bc77c6ba4f1dad59f3f04ee81cb597618ff7c30a33c157c0a20462b6dd6aa2d4d
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.0.28":
-  version: 18.0.33
-  resolution: "@types/react@npm:18.0.33"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: 4fbd2b2b6a26378bdfde121081a6406ec2d39e4ba87ea5f6897ab7bb2198713165e6fd703ad4ed7ba1d4f23ef54a4c9f108f3105c7ed8e136411ee6bdebc5669
+  checksum: 81381bedeba83278f4c9febb0b83e0bd3f42a25897a50b9cb36ef53651d34b3d50f87ebf11211ea57ea575131f85d31e93e496ce46478a00b0f9bf7b26b5917a
   languageName: node
   linkType: hard
 
@@ -2930,7 +2910,7 @@ __metadata:
     "@types/node": ^18.14.1
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
-    eslint: ^8.0.0
+    eslint: 8.37.0
     eslint-config-custom: "*"
     jest: ^29.4.3
     next: 13.2.4
@@ -3412,7 +3392,7 @@ eslint-config-turbo@latest:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.0.0":
+"eslint@npm:8.37.0, eslint@npm:^8.0.0":
   version: 8.37.0
   resolution: "eslint@npm:8.37.0"
   dependencies:
@@ -7689,7 +7669,7 @@ prettier@latest:
     "@types/node": ^18.14.1
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
-    eslint: ^8.0.0
+    eslint: 8.37.0
     eslint-config-custom: "*"
     jest: ^29.4.3
     next: 13.2.4
