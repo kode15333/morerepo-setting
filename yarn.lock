@@ -8147,6 +8147,7 @@ prettier@latest:
     eslint-config-custom: "*"
     jest: ^29.4.3
     next: 13.2.4
+    playwright-slack-report: ^1.1.72
     react: ^18.2.0
     react-dom: ^18.2.0
     react-intersection-observer: ^9.4.3
