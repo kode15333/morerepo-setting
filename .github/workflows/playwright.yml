@@ -4,10 +4,9 @@ on:
     branches: [ e2e ]
 
 
-default:
+defaults:
   run:
     shell: bash
-    working-directory: web
 
 jobs:
   test:
