@@ -20,10 +20,16 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install -g yarn && yarn
+
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: |
+        yarn add -D playwright
+        yarn playwright install
+
     - name: Run Playwright tests
-      run: yarn playwright test
+      run: yarn turbo test:e2e --filter=web
+
+
     - uses: actions/upload-artifact@v3
       if: always()
       with:
