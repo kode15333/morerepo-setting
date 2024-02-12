@@ -17,8 +17,13 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
+
+
     - name: Install dependencies
-      run: npm install -g yarn && yarn
+      run: npm install -g yarn
+
+    - name: Yarn install
+      run: yarn install
 
     - name: Install Playwright Browsers
       run: |
@@ -26,7 +31,7 @@ jobs:
         yarn playwright install
 
     - name: Run Playwright tests
-      run: yarn turbo test:e2e --filter=web
+      run: yarn turbo test:e2e --filter web
 
 
     - uses: actions/upload-artifact@v3
