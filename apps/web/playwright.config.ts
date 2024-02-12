@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import path from "node:path";
 
 /**
  * Read environment variables from file.
@@ -10,15 +11,27 @@ import { defineConfig, devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: "./tests",
+  testDir: path.resolve(__dirname, "tests"),
+  globalSetup: path.resolve(__dirname, "globalSetup.ts"),
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: "html",
+  reporter: [
+    [
+      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
+      {
+        channels: ["pw-tests", "ci"], // provide one or more Slack channels
+        sendResults: "always", // "always" , "on-failure", "off"
+      },
+    ],
+    ["dot"], // other reporters
+  ],
   use: {
     baseURL: "http://localhost:3000",
     trace: "retry-with-trace",
+    storageState: path.resolve(__dirname, "storage-state.json"),
+    userAgent: "Playwright",
   },
   projects: [
     {
@@ -28,7 +41,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "yarn dev",
-    url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
+    url: "http://localhost:3000",
   },
 });
