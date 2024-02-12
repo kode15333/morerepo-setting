@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 import path from "node:path";
-
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -19,7 +18,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     [
-      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
+      "../../node_modules/playwright-slack-report/dist/src/SlackReporter.js",
       {
         channels: ["pw-tests", "ci"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
