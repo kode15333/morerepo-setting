@@ -40,9 +40,8 @@ jobs:
         fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
         author_name: Playwright Test Bot
         text: 'Playwright Test Results'
-        webhook_url: "https://hooks.slack.com/services/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"
+        webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
       if: always()
-
 
 
     - uses: actions/upload-artifact@v3
