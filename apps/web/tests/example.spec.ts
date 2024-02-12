@@ -5,5 +5,5 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("basic test", async ({ page }) => {
-  await expect(page.getByTestId("home")).toBeVisible();
+  await expect(page.getByTestId("home1")).toBeVisible();
 });
