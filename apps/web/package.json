@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --silent --ci --coverage --testLocationInResults --json --outputFile='report.json'"
+    "test": "jest --silent --ci --coverage --testLocationInResults --json --outputFile='report.json'",
+    "test:e2e": "yarn playwright test --config=playwright.config.ts"
   },
   "dependencies": {
     "eslint-config-custom": "*",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
+    "@playwright/test": "^1.41.2",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.14.1",
     "@types/react": "^18.0.28",
