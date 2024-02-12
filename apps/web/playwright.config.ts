@@ -16,16 +16,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [
-    [
-      "../../node_modules/playwright-slack-report/dist/src/SlackReporter.js",
-      {
-        channels: ["pw-tests", "ci"], // provide one or more Slack channels
-        sendResults: "always", // "always" , "on-failure", "off"
-      },
-    ],
-    ["dot"], // other reporters
-  ],
+  reporter: [["json", { outputFile: "test-results.json" }]],
   use: {
     baseURL: "http://localhost:3000",
     trace: "retry-with-trace",

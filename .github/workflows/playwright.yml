@@ -33,6 +33,13 @@ jobs:
     - name: Run Playwright tests
       run: yarn turbo test:e2e --filter web
 
+    - name: Upload Playwright report
+      id: upload-report
+      uses: slackapi/upload-playwright-report@main
+      with:
+        payload-file-path: "./apps/web/test-results.json"
+      env:
+        SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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"
 
     - uses: actions/upload-artifact@v3
       if: always()
