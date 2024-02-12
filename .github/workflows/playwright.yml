@@ -35,7 +35,7 @@ jobs:
 
     - name: Upload Playwright report
       id: upload-report
-      uses: slackapi/upload-playwright-report@main
+      uses: slackapi/slack-github-action@v1.25.0
       with:
         payload-file-path: "./apps/web/test-results.json"
       env:
