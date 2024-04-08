@@ -7,7 +7,7 @@ const pattern = "packages/**/report.json";
 async function getReportFiles() {
     const files = glob.sync(pattern);
 
-    let mergedData = null;
+    let mergeData = null;
 
     files.forEach((file) => {
         // 각 파일의 내용을 읽습니다.
@@ -16,34 +16,35 @@ async function getReportFiles() {
         try {
             const jsonData = JSON.parse(content);
 
-            if (mergedData === null) {
-                mergedData = jsonData;
+            if (mergeData === null) {
+                mergeData = jsonData;
                 return;
             }
 
-            const testResults = jsonData.testResults;
-            const mergedTestResults = mergedData.testResults;
 
-            mergedData.coverageMap = {
-                ...mergedData.coverageMap,
-                ...jsonData.coverageMap,
-            }
+            Object.keys(mergeData).forEach((key) => {
 
-            mergedTestResults.push(...testResults);
+                try {
+                    if (typeof mergeData[key] === "number") {
+                        mergeData[key] += jsonData[key];
+                        return;
+                    }
 
-            mergedData.numFailedTestSuites += jsonData.numFailedTestSuites;
-            mergedData.numFailedTests += jsonData.numFailedTests;
-            mergedData.numPassedTestSuites += jsonData.numPassedTestSuites;
-            mergedData.numPassedTests += jsonData.numPassedTests;
-            mergedData.numPendingTestSuites += jsonData.numPendingTestSuites;
-            mergedData.numPendingTests += jsonData.numPendingTests;
-            mergedData.numRuntimeErrorTestSuites += jsonData.numRuntimeErrorTestSuites;
-            mergedData.numTodoTests += jsonData.numTodoTests;
-            mergedData.numTotalTestSuites += jsonData.numTotalTestSuites;
-            mergedData.numTotalTests += jsonData.numTotalTests;
+                    if (Array.isArray(mergeData[key])) {
+                        mergeData[key].push(...jsonData[key]);
+                        return;
+                    }
 
-
-
+                    if (typeof mergeData[key] === "object") {
+                        mergeData[key] = {
+                            ...mergeData[key],
+                            ...jsonData[key],
+                        }
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            });
 
 
         } catch (parseError) {
@@ -54,7 +55,7 @@ async function getReportFiles() {
 
     fs.writeFileSync(
         "merged-report.json",
-        JSON.stringify(mergedData, null, 2),
+        JSON.stringify(mergeData, null, 2),
         "utf8",
     );
 
