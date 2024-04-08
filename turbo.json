@@ -17,8 +17,12 @@
       "cache": false
     },
     "test": {
+      "dependsOn": [
+        "^test",
+        "^build"
+      ],
       "outputs": ["coverage/**"],
-      "dependsOn": ["build"]
+      "cache": false
     }
   }
 }
