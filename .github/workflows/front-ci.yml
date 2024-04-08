@@ -37,6 +37,7 @@ jobs:
     - name: jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2
       with:
+        custom-title: Coverage report for Package
         skip-step: all
         coverage-file: merged-report.json
         base-coverage-file: merged-report.json
