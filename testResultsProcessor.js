@@ -22,7 +22,6 @@ async function getReportFiles() {
             }
 
             const testResults = jsonData.testResults;
-
             const mergedTestResults = mergedData.testResults;
 
             mergedData.coverageMap = {
@@ -31,6 +30,19 @@ async function getReportFiles() {
             }
 
             mergedTestResults.push(...testResults);
+
+            mergedData.numFailedTestSuites += jsonData.numFailedTestSuites;
+            mergedData.numFailedTests += jsonData.numFailedTests;
+            mergedData.numPassedTestSuites += jsonData.numPassedTestSuites;
+            mergedData.numPassedTests += jsonData.numPassedTests;
+            mergedData.numPendingTestSuites += jsonData.numPendingTestSuites;
+            mergedData.numPendingTests += jsonData.numPendingTests;
+            mergedData.numRuntimeErrorTestSuites += jsonData.numRuntimeErrorTestSuites;
+            mergedData.numTodoTests += jsonData.numTodoTests;
+            mergedData.numTotalTestSuites += jsonData.numTotalTestSuites;
+            mergedData.numTotalTests += jsonData.numTotalTests;
+
+
 
 
 
