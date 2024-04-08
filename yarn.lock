@@ -7906,13 +7906,13 @@ prettier@latest:
   languageName: node
   linkType: hard
 
-"utils2@workspace:packages/utils2":
+"utils2@*, utils2@workspace:packages/utils2":
   version: 0.0.0-use.local
   resolution: "utils2@workspace:packages/utils2"
   languageName: unknown
   linkType: soft
 
-"utils@workspace:packages/utils":
+"utils@*, utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "utils@workspace:packages/utils"
   languageName: unknown
@@ -7996,6 +7996,8 @@ prettier@latest:
     tsconfig: "*"
     typescript: ^5.0.0
     ui: "*"
+    utils: "*"
+    utils2: "*"
   languageName: unknown
   linkType: soft
 
