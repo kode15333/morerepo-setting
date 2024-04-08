@@ -7,7 +7,7 @@ const pattern = "packages/**/report.json";
 async function getReportFiles() {
     const files = glob.sync(pattern);
 
-    const mergedData = [];
+    let mergedData = null;
 
     files.forEach((file) => {
         // 각 파일의 내용을 읽습니다.
@@ -16,13 +16,19 @@ async function getReportFiles() {
         try {
             const jsonData = JSON.parse(content);
 
-            if (mergedData.length === 0) {
-                mergedData.push(jsonData);
+            if (mergedData === null) {
+                mergedData = jsonData;
                 return;
             }
 
             const testResults = jsonData.testResults;
-            const mergedTestResults = mergedData[0].testResults;
+
+            const mergedTestResults = mergedData.testResults;
+
+            mergedData.coverageMap = {
+                ...mergedData.coverageMap,
+                ...jsonData.coverageMap,
+            }
 
             mergedTestResults.push(...testResults);
 
@@ -36,7 +42,7 @@ async function getReportFiles() {
 
     fs.writeFileSync(
         "merged-report.json",
-        JSON.stringify(mergedData[0], null, 2),
+        JSON.stringify(mergedData, null, 2),
         "utf8",
     );
 
